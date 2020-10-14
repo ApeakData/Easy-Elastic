@@ -6,4 +6,19 @@ GET /trainstations/_search
       "composite" : {
         "after" : {
         "countries" : "HU"
-      }, ...
+      }, 
+        "size" : 20,
+        "sources" : [
+          {
+            "countries" : {
+              "terms" : {
+                "field" : "country.keyword",
+                "order" : "asc"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
